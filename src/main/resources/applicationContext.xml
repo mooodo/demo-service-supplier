@@ -8,7 +8,7 @@
 	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd"
 	>
 	<description>The application context for query</description>
-	<bean id="supplierService" class="com.demo.supplier.service.impl.SupplierServiceImpl">
+	<bean id="supplier" class="com.demo.supplier.service.impl.SupplierServiceImpl">
 		<property name="dao" ref="supplierDao"></property>
 	</bean>
 </beans>
