@@ -10,11 +10,13 @@ package com.demo.supplier.entity;
 public class Supplier {
 	private String id;
 	private String name;
+	private String classify;
 	
 	public Supplier() {}
-	public Supplier(String id, String name) {
+	public Supplier(String id, String name, String classify) {
 		this.id = id;
 		this.name = name;
+		this.classify = classify;
 	}
 	/**
 	 * @return the id
@@ -39,6 +41,18 @@ public class Supplier {
 	 */
 	public void setName(String name) {
 		this.name = name;
+	}
+	/**
+	 * @return the classify
+	 */
+	public String getClassify() {
+		return classify;
+	}
+	/**
+	 * @param classify the classify to set
+	 */
+	public void setClassify(String classify) {
+		this.classify = classify;
 	}
 	
 }

@@ -24,7 +24,7 @@ eureka:
 spring:
   profiles: dev
 server:
-  port: 9004   
+  port: 9014   
 
 eureka:
   client:
@@ -35,7 +35,7 @@ spring:
   profiles: docker
 
 server:
-  port: ${SERVICE_PORT:9004}
+  port: ${SERVICE_PORT:9014}
 
 eureka:
   instance:
