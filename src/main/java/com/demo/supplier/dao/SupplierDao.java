@@ -3,15 +3,25 @@
  */
 package com.demo.supplier.dao;
 
-import java.util.List;
+import java.util.Collection;
 
 import com.demo.supplier.entity.Supplier;
 
 /**
- * 
+ * The interface of supplier dao.
  * @author fangang
  */
 public interface SupplierDao {
+	/**
+	 * insert a supplier
+	 * @param supplier
+	 */
+	public void insertSupplier(Supplier supplier);
+	/**
+	 * update a supplier
+	 * @param supplier
+	 */
+	public void updateSupplier(Supplier supplier);
 	/**
 	 * @param id
 	 * @return
@@ -21,5 +31,5 @@ public interface SupplierDao {
 	/**
 	 * @return
 	 */
-	public List<Supplier> listOfSupplier();
+	public Collection<Supplier> listOfSuppliers();
 }

@@ -3,30 +3,38 @@
  */
 package com.demo.supplier.dao.impl;
 
-import java.util.List;
+import java.util.Collection;
 
 import org.springframework.stereotype.Repository;
 
 import com.demo.supplier.dao.SupplierDao;
 import com.demo.supplier.entity.Supplier;
-import com.demo.supplier.repository.SupplierRepository;
 
 /**
  * The implement of the supplier dao.
  * @author fangang
  */
-@Repository("supplierDao")
+@Repository()
 public class SupplierDaoImpl implements SupplierDao {
-	private SupplierRepository repository = SupplierRepository.getInstance();
+	private SupplierFactory factory = SupplierFactory.newInstance();
 
 	@Override
-	public Supplier getSupplier(String id) {
-		return repository.get(id);
+	public void insertSupplier(Supplier supplier) {
+		factory.save(supplier);
 	}
 
 	@Override
-	public List<Supplier> listOfSupplier() {
-		return repository.list();
+	public void updateSupplier(Supplier supplier) {
+		factory.save(supplier);
+	}
+	@Override
+	public Supplier getSupplier(String id) {
+		return factory.get(id);
+	}
+
+	@Override
+	public Collection<Supplier> listOfSuppliers() {
+		return factory.list();
 	}
 
 }

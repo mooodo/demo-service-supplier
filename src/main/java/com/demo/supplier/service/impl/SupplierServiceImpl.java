@@ -3,7 +3,10 @@
  */
 package com.demo.supplier.service.impl;
 
-import java.util.List;
+import java.util.Collection;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.demo.supplier.dao.SupplierDao;
 import com.demo.supplier.entity.Supplier;
@@ -13,28 +16,24 @@ import com.demo.supplier.service.SupplierService;
  * The implement of the supplier service.
  * @author fangang
  */
-
+@Service
 public class SupplierServiceImpl implements SupplierService {
+	@Autowired
 	private SupplierDao dao;
-	/**
-	 * @return the dao
-	 */
-	public SupplierDao getDao() {
-		return dao;
+	@Override
+	public void createSupplier(Supplier supplier) {
+		dao.insertSupplier(supplier);
 	}
-	/**
-	 * @param dao the dao to set
-	 */
-	public void setDao(SupplierDao dao) {
-		this.dao = dao;
+	@Override
+	public void modifySupplier(Supplier supplier) {
+		dao.updateSupplier(supplier);
 	}
 	@Override
 	public Supplier loadSupplier(String id) {
 		return dao.getSupplier(id);
 	}
 	@Override
-	public List<Supplier> listOfSupplier() {
-		return dao.listOfSupplier();
+	public Collection<Supplier> listOfSuppliers() {
+		return dao.listOfSuppliers();
 	}
-
 }

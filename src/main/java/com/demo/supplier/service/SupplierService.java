@@ -3,7 +3,7 @@
  */
 package com.demo.supplier.service;
 
-import java.util.List;
+import java.util.Collection;
 
 import com.demo.supplier.entity.Supplier;
 
@@ -13,13 +13,23 @@ import com.demo.supplier.entity.Supplier;
  */
 public interface SupplierService {
 	/**
+	 * create a supplier
+	 * @param supplier
+	 */
+	public void createSupplier(Supplier supplier);
+	/**
+	 * modify a certain supplier
+	 * @param supplier
+	 */
+	public void modifySupplier(Supplier supplier);
+	/**
 	 * @param id
 	 * @return the supplier
 	 */
 	public Supplier loadSupplier(String id);
 	
 	/**
-	 * @return the list of supplier
+	 * @return the list of suppliers
 	 */
-	public List<Supplier> listOfSupplier();
+	public Collection<Supplier> listOfSuppliers();
 }
