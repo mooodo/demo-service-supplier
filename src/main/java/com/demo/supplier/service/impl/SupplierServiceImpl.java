@@ -16,7 +16,7 @@ import com.demo.supplier.service.SupplierService;
  * The implement of the supplier service.
  * @author fangang
  */
-@Service
+@Service("supplier")
 public class SupplierServiceImpl implements SupplierService {
 	@Autowired
 	private SupplierDao dao;
