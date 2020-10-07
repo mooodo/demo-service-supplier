@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objs>
   <product id="20001" name="International Business Machines Corporation(IBM)" classify="电子产品"/>
-  <product id="20002" name="上海晨光文具股份有限公司(M&G)" classify="办公用品"/>
+  <product id="20002" name="晨光办公用品" classify="办公用品"></product>
 </objs>
