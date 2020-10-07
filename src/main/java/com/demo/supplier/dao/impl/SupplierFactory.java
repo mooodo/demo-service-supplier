@@ -13,7 +13,7 @@ public class SupplierFactory extends GenericFactory<Supplier> {
 	private static SupplierFactory factory;
 	public static synchronized SupplierFactory newInstance() {
 		if(factory!=null) return factory;
-		SupplierFactory instance = SupplierFactory.newInstance();
+		SupplierFactory instance = new SupplierFactory();
 		instance.setClazz(Supplier.class);
 		instance.initFactory("supplier.xml");
 		factory = instance;

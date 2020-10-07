@@ -9,6 +9,6 @@
 	>
 	<description>The application context for query</description>
 	<bean id="supplierQry" class="com.demo.support.service.impl.QueryServiceImpl">
-		<property name="queryDao" ref="customerQueryDao"></property>
+		<property name="queryDao" ref="supplierQueryDao"></property>
 	</bean>
 </beans>
