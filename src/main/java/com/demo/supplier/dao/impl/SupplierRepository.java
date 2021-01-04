@@ -1,5 +1,5 @@
-/* 
- * Created by 2019年1月6日
+/*
+ * Created by 2021-01-04 09:18:06 
  */
 package com.demo.supplier.dao.impl;
 
@@ -9,32 +9,37 @@ import org.springframework.stereotype.Repository;
 
 import com.demo.supplier.dao.SupplierDao;
 import com.demo.supplier.entity.Supplier;
+import com.demo.support.dao.BasicRepository;
 
 /**
- * The implement of the supplier dao.
  * @author fangang
  */
-@Repository()
-public class SupplierDaoImpl implements SupplierDao {
-	private SupplierFactory factory = SupplierFactory.newInstance();
+@Repository
+public class SupplierRepository extends BasicRepository<Supplier> implements SupplierDao {
+
+	public SupplierRepository() {
+		setClazz(Supplier.class);
+		initFactory("supplier.xml");
+	}
 
 	@Override
 	public void insertSupplier(Supplier supplier) {
-		factory.save(supplier);
+		super.save(supplier);
 	}
 
 	@Override
 	public void updateSupplier(Supplier supplier) {
-		factory.save(supplier);
+		super.save(supplier);
 	}
+
 	@Override
 	public Supplier getSupplier(String id) {
-		return factory.get(id);
+		return super.get(id);
 	}
 
 	@Override
 	public Collection<Supplier> listOfSuppliers() {
-		return factory.list();
+		return super.list();
 	}
 
 }

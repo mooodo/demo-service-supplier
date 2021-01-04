@@ -6,9 +6,10 @@ package com.demo.supplier.query.dao;
 import java.util.Collection;
 import java.util.Map;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.demo.supplier.dao.impl.SupplierFactory;
+import com.demo.supplier.dao.impl.SupplierRepository;
 import com.demo.support.dao.QueryDao;
 
 /**
@@ -16,15 +17,16 @@ import com.demo.support.dao.QueryDao;
  */
 @Repository
 public class SupplierQueryDao implements QueryDao {
-	private SupplierFactory factory = SupplierFactory.newInstance();
+	@Autowired
+	private SupplierRepository repository;
 	@Override
 	public Collection<?> query(Map<String, Object> params) {
-		return factory.list();
+		return repository.list();
 	}
 
 	@Override
 	public long count(Map<String, Object> params) {
-		return factory.list().size();
+		return repository.list().size();
 	}
 
 	@Override
