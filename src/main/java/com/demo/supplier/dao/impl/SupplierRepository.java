@@ -15,7 +15,7 @@ import com.demo.support.dao.BasicRepository;
  * @author fangang
  */
 @Repository
-public class SupplierRepository extends BasicRepository<Supplier> implements SupplierDao {
+public class SupplierRepository extends BasicRepository<Supplier, String> implements SupplierDao {
 
 	public SupplierRepository() {
 		setClazz(Supplier.class);
